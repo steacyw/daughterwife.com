@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STINKEY WHORE WEBSITE</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #94ffda;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(30px, 6vw, 80px);
+  color: #ff4646;
+  text-shadow: 0px 0px 3px white;
+  margin: 0;
+}
+
+p {
+  font-family: times new roman, sans serif;
+  font-size: clamp(10px, 3.6vw, 30px);
+  margin: 0;
+}
+
+.text {
+  flex: 0 0 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.vidDiv {
+  flex: 0 0 80vh;
+  background-color: #94ffda;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vidDiv video {
+  height: 100%;      /* fill div height 100 */
+  width: auto;
+  max-width: 100%;   /* never wider than the div */
+  display: block;
+  padding: 10px;
+  box-sizing: border-box; /* padding is included within the 80vh, not added on top */
+  box-shadow: 1px 1px 5px #8d7881 inset;
+  filter: brightness(150%); /* make video brighter, duh!!! */
+}
+
+/* ── on mobile phone screens: shrink the whole site to 90% of the viewport, thanks ── */
+@media (max-width: 768px) {
+  body {
+    height: 95vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+  flex: 0 0 9.5vh;
+  }
+  .vidDiv {
+  flex: 0 0 76vh;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="text">
+  <h1><i><b>StinkyWhore.com</i></b></h1>
+</div>
+
+<div class="vidDiv">
+  <video autoplay playsinline muted loop>
+    <source src="whoredance_720.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="text">
+  <p>All designs © Stinky Whore Enterprises <script>document.write(new Date().getFullYear())</script><br>Video recorded by God.</p>
+</div>
+
+</body>
+</html>
