@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Overlay Demo</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1a1a1a;
+      font-family: Georgia, serif;
+    }
+
+    /* ─── THE KEY TECHNIQUE ───────────────────────────────────────────
+       The container is position: relative.
+       This makes it the "anchor" that all absolutely-positioned
+       children inside it are measured against.
+    ──────────────────────────────────────────────────────────────── */
+    .image-stack {
+      position: relative;   /* <-- anchor for the overlay */
+      display: inline-block; /* shrink-wraps to the image's size */
+    }
+
+    /* The base JPG fills the container naturally */
+    .image-stack__base {
+      display: block;       /* removes the small gap below inline images */
+      width: 100%;          /* fills the container */
+      max-width: 800px;     /* optional: cap the max size */
+      height: auto;         /* keep aspect ratio */
+    }
+
+    /* ─── THE OVERLAY ─────────────────────────────────────────────────
+       position: absolute removes it from the normal flow and
+       positions it relative to the nearest positioned ancestor
+       (our .image-stack container above).
+
+       To CENTER it:
+         top: 50%   → moves the GIF's top edge to the vertical midpoint
+         left: 50%  → moves the GIF's left edge to the horizontal midpoint
+         transform: translate(-50%, -50%)
+                    → shifts it back by half its own width and height,
+                      landing its CENTER on the container's center.
+
+       To OFFSET from center, adjust the % values in translate():
+         translate(-50%, -50%)  → perfectly centered
+         translate(-80%, -50%)  → shifted left
+         translate(-50%, -80%)  → shifted up
+         translate(-20%, -50%)  → shifted right
+         
+       Or use top/left/right/bottom % values to position by anchor point:
+         top: 25%; left: 50%  → horizontally centered, near the top
+    ──────────────────────────────────────────────────────────────── */
+    .image-stack__overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      /* Control the GIF's size relative to the base image.
+         50% means the GIF will always be half the container's width.
+         Change this to make it bigger or smaller. */
+      width: 30%;
+
+      /* pointer-events: none lets clicks pass through to things below */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-stack">
+    <img
+      class="image-stack__base"
+      src="Marmot-edit1-cool.jpg"
+      alt="Cool marmot on a rock"
+    />
+    <img
+      class="image-stack__overlay"
+      src="ezgif-1c7ccba5109766d9.gif"
+      alt="Example overlay"
+    />
+  </div>
+
+</body>
+</html>
