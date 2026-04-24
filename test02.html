@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>daughterwife.com :)</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #41435e;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(30px, 6vw, 80px);
+  color: #d7d7d7;
+  text-shadow: 0px 0px 3px white;
+  transform: skew(-10deg);
+  margin: 0;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-size: clamp(10px, 3.6vw, 24px);
+  color: #d7d7d7;
+  margin: 0;
+}
+
+.text {
+  flex: 0 0 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.picDiv {
+  flex: 0 0 80vh;
+  background-color: #41435e;
+  width: 90vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── The stack wrapper becomes the overlay anchor ── */
+.image-stack {
+  position: relative;   /* anchor for absolutely-positioned overlay */
+  display: inline-block; /* shrink-wraps to the image's rendered size */
+  height: 100%;          /* fills the picDiv height */
+}
+
+/* Base JPG inherits the styles that used to live on .picDiv img */
+.image-stack__base {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  box-shadow: 1px 1px 5px #8d7881 inset;
+  border-radius: clamp(2px, 12.5vw, 30px);
+}
+
+/* ── Overlay GIF – tweak top/left/width to reposition ── */
+.image-stack__overlay {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  /* NOTE: both transforms combined into one declaration so neither is lost */
+  transform: translate(-50%, -50%) rotate(-5deg);
+  width: 40%;
+  pointer-events: none;
+}
+
+/* ── mobile ── */
+@media (max-width: 768px) {
+  body {
+    height: 95vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+    flex: 0 0 9.5vh;
+  }
+  .picDiv {          /* was .vidDiv in the original — typo fixed */
+    flex: 0 0 76vh;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="text">
+  <h1><i><b>We Can Have It All</i></b></h1>
+</div>
+
+<div class="picDiv">
+  <div class="image-stack">
+    <img class="image-stack__base" src="images/DW+FH.jpg" alt="">
+    <img class="image-stack__overlay" src="images/SBPDW.gif" alt="">
+  </div>
+</div>
+
+<div class="text">
+  <p>All designs © Will Steacy <script>document.write(new Date().getFullYear())</script><br>I love my sweetie <3</p>
+</div>
+
+</body>
+</html>
