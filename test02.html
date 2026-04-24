@@ -5,6 +5,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
 body {
   background-color: #41435e;
   display: flex;
@@ -12,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 h1 {
   font-family: Arial, sans-serif;
   font-size: clamp(30px, 6vw, 80px);
@@ -20,12 +22,14 @@ h1 {
   transform: skew(-10deg);
   margin: 0;
 }
+
 p {
   font-family: Arial, sans-serif;
   font-size: clamp(10px, 3.6vw, 24px);
   color: #d7d7d7;
   margin: 0;
 }
+
 .text {
   flex: 0 0 10vh;
   display: flex;
@@ -58,9 +62,10 @@ p {
   position: relative; /* ← the GIF anchor; NOT the wide outer container */
   height: 80vh;       /* explicit, so children's height: 100% resolves */
   /* width is determined by the image content = always matches the JPG */
+    border-radius: clamp(2px, 12.5vw, 30px);
 }
 
-.image-stack__base {
+.image-stack__BG {
   height: 100%;       /* fills .image-frame's 80vh exactly */
   width: auto;        /* natural aspect ratio → frame width = image width */
   display: block;
@@ -82,6 +87,7 @@ p {
   transform: rotate(-5deg);
   pointer-events: none;
 }
+
 .image-stack__cute02 {
   position: absolute;
   width: 20%;
@@ -116,7 +122,7 @@ p {
 <div class="image-stack">
   <div class="image-frame">
     <img
-      class="image-stack__base"
+      class="image-stack__BG"
       src="images/DW+FH.jpg"
       alt="beautiful daughterwife and &quot;friend&quot;."
     />
