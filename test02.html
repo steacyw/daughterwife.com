@@ -56,8 +56,13 @@ p {
 /* ── The stack wrapper becomes the overlay anchor ── */
 .image-stack {
   position: relative;    /* anchor for absolutely-positioned overlay */
-  display: inline-block; /* shrink-wraps to the image's rendered size */
-  height: 80vh;          /* explicit match of .picDiv's flex-basis so .image-stack__base's height: 100% resolves correctly */
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  object-fit: cover;
+  display: block;
+  box-shadow: 1px 1px 5px #8d7881 inset;
+  border-radius: clamp(2px, 12.5vw, 30px);
 }
 
 /* Base JPG inherits the styles that used to live on .picDiv img */
