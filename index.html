@@ -63,6 +63,28 @@ p {
   border-radius: clamp(2px, 12.5vw, 30px);
 }
 
+.image-stack {
+  position: relative;   /* <-- anchor for the overlay */
+  display: inline-block; /* shrink-wraps to the image's size */
+}
+
+.image-stack__base {
+  display: block;       /* removes the small gap below inline images */
+  width: 100%;          /* fills the container */
+  max-width: 800px;     /* optional: cap the max size */
+  height: auto;         /* keep aspect ratio */
+}
+
+.image-stack__overlay {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  transform: rotate(-5deg);
+  /* width: 40%; PUT THIS VALUE IN THE INDIVIDUAL IMAGES Control the GIF's size relative to the base image. 50% means the GIF will always be half the container's width. Change this to make it bigger or smaller. */
+  /* pointer-events: none; */
+}
+
 /* ── on mobile phone screens: shrink the whole site to 90% of the viewport, thanks ── */
 @media (max-width: 768px) {
   body {
@@ -87,7 +109,19 @@ p {
 </div>
 
 <div class="picDiv">
-  <img src="images/DW+FH.jpg">
+  <!-- <img src="images/DW+FH.jpg"> -->
+  <div class="image-stack">
+    <img
+      class="image-stack__base"
+      src="/images/DW+FH.jpg"
+      alt="beautiful daughterwife and &quot;friend&quot;."
+    />
+    <img
+      class="image-stack__overlay"
+      src="/images/SBPDW.gif"
+      alt="Example overlay"
+    />
+  </div>
 </div>
 
 <div class="text">
