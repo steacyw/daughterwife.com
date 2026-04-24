@@ -75,23 +75,19 @@ p {
   position: absolute;
   top: 50%;
   left: 15%;
-  /* NOTE: both transforms combined into one declaration so neither is lost */
-  transform: translate(-50%, -50%) rotate(-5deg);
   width: 40%;
-  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-5deg);
 }
 
 /* ── mobile ── */
 @media (max-width: 768px) {
   body {
     height: 95vh;
-    align-items: center;
-    justify-content: center;
   }
   .text {
     flex: 0 0 9.5vh;
   }
-  .picDiv {          /* was .vidDiv in the original — typo fixed */
+  .picDiv {
     flex: 0 0 76vh;
   }
 }
